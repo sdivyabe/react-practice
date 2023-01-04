@@ -1,0 +1,123 @@
+Component Types
+----------------
+    1.Sateless Functional Component
+    2.Stateful Class Component
+
+Functional Components 
+---------------------
+    It is Simple Function
+    Use this as much as posible
+    Absence of 'this' keyword
+    result without using 'state'
+    responsible for UI
+    stateless/dumb/presentational
+
+
+Class Components
+----------------
+    more feture rich
+    maintain their own private data(state)
+    complex UI logic
+    provide lifecycle hooks
+    stateful/smart/container
+
+
+JSX
+---
+    JavaScript XML - Extention for the JS lang syntax
+    JSX have a tag name,attributes, and children
+    no need to write react application
+    but it makes ur code simpler and elegant 
+    JSX files transfer to pure JS files which is understand by browser
+
+JSX Diff
+--------
+    Class --> className
+    for --> htmlfor
+    camelCase property naming convention
+    ------------------------------------
+        onclick --> onClick
+        tabindex --> tabIndex
+    React Fire - https://github.com/facebook/react/issues/13525
+
+props vs state
+---------------
+    props
+    -----
+        it passed to the component
+        fn parameter
+        props r immutable
+        props --> functional component
+        this.props --> class component
+
+        this
+        -----
+            when using props we can't access 'this' inside the super() method
+            need to pass props as argument to super method -> super(props)
+
+
+    state
+    ------
+        state is an object and it privately maintained within the component
+        variables diclared in the functional body
+        state can be changed
+        useState Hooks --> finctional component
+        this.state --> class component
+    
+        this
+        ----
+            we can't access this outside the derived class 
+            by using bind method we can access
+            In Arrow fn can access 'this' without using bind method 
+            traditional fn only needs bind method to access 'this'
+
+Never modify the state directly
+if u modify the state directly UI page will not render only console con render
+use setState method to modify the state
+
+Destructring props 
+------------------
+    two ways
+        1.Destructure it fn parameter itself
+            funstion Greet({name,heroName}){
+                ....
+            }
+
+        2.Destructure it fn body
+            function Greet(props){
+                const {name,heroName} = props
+            }
+
+Browser
+----------
+    first --> constructor render
+    second --> return stmt
+    third --> compoumtdidmount lifecycle
+
+4 ways in Binding this in class component
+-----------------------------------------
+    1.binding in render(not want to use bcz of performence implication)
+    2.arrow fn in render(we can use if our data not binded to child property)
+    3.binding in the class constructor(best approch)
+    4.class property has arrow fn
+
+Conditional Rendering
+---------------------
+    if/else
+    Element variables
+    Ternary conditional operator
+    Short circuit operator
+
+List and Keys
+-------------
+    A "Key" is a special strimg attribute u need to include when creating list of elements
+    keys give the elements a stable identity
+    keys help a react to identify which iten have changed, are added, or are removed.
+    heips in efficient update of the UI
+
+Index as key
+------------
+    when to use index as key?
+        The item in ur list dont have the unique id
+        The list have tha static list and will not change
+        The list will never be reordered or filtered.
